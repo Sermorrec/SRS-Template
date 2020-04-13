@@ -48,14 +48,14 @@ Clean-up
 ## Versiones
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
-|      |         |                     |           |
+|  Sergio Morales Recio    |   13/04/2020      |   Primera definición de requisitos   |       0.1    |
 |      |         |                     |           |
 |      |         |                     |           |
 
 ## 1. Introducción
 
 ### 1.1 Objetivo del documento
-El propósito de este SRS es el describir cada una de las especificaciones del producto software a desarrollar por la organización Clean-up.
+El propósito de este SRS es el describir cada una de las especificaciones del producto software a desarrollar por la organización Clean-up para informar a nuestro cliente.
 
 ### 1.2 Ámbito del proyecto
 Nuestro software consiste en una plataforma en la que unos usuarios puedan subir incidencias o desperfectos en su ciudad en forma de tickets en los que prodrán incluir un titulo, una breve descripción, unas coordenadas y una o varias imágenes. Estos tickets son gestionados por unos agentes que se encargaran de solucionar los desperfectos y de cerrar los tickets. El objetivo de nuestro producto ofrecer un bien social al fomentar la comunicación entre los ciudadamos y el ayuntamiento de dicha ciudad al permitir que los ciudadanos aporten su grano de arena al mantenimiento de su cuidad.
@@ -71,7 +71,8 @@ En este documento veremos una descripción general del producto software, así c
 ### 2.1 Perspectiva del producto
 Algunas ciudades, como Málaga, poseen un sistema por el que los ciudadanos pueden poner reclamaciones o peticiones al ayuntamiento. Nos basamos en esta idea para generar un producto que realizase la misma función, enfocado en el matenimiento de la ciudad, de manera más rápida, sencilla y directa.
 ### 2.2 Funciones del producto
-(Diagrama casos de uso.png)
+Nuestro producto consiste en un aplataforma web en la que los ciudadanos prodrán notificar al ayuntamiento de los distintos desperfectos que encuentren para que este lo solucione. Cada ciudadano deberá registrarse en el sistema creando una cuenta de usuario, una vez registrado podrá crear un ticket para nitificar de un desperfecto. Si las coordenadas de un ticket coinciden con las de otro ya creado el usuario podrá podrá decidir si son la misma y en tal caso también si subirla, en caso de subirla esta se añadira como un subticket del ticket principal o primero. Estos tickets seran tratados por los "agentes", que serian trabajadores del ayuntamiento, pudiendo comentarlos, modificar su estado y cerrarlos.
+[!Casos](Diagrama casos de uso.png)
 ### 2.3 Restricciones del producto
 Esta subsección debe proporcionar una descripción general de cualquier otro elemento que limitará las opciones del desarrollador. Estos pueden incluir:
 
