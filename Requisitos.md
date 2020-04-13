@@ -44,7 +44,6 @@ Clean-up
     * 4.5.7 [Fecha de Entrega](#457-fecha-de-entrega)
 * 5 [Verificación](#5-verificación)
 * 6 [Apendices](#6-apendices) 
-3
   
 ## Versiones
 | Name | Date    | Reason For Changes  | Version   |

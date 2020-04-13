@@ -53,7 +53,7 @@ Generada por <author>
 |      |         |                     |           |
 
 ## 1. Introducción
-Esta sección debe proporcionar una visión general de todo el documento.
+xd
 
 ### 1.1 Objetivo del documento
 Describa el propósito del SRS y su público objetivo.
