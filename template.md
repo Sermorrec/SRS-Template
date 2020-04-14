@@ -97,98 +97,98 @@ Es imprescindicle para el uso de sistema
 
 ### 2 - Cuenta única de usuario
 Es necesario que cada uno de los usuarios se registre en el sistema aportando un nombre de usuario, un email, un número de telefono y una contraseña para hacer uso de él
-1
-Fundamental
+<br>1
+<br>Fundamental<br>
 Para controlar la actividad de los usuarios y evitar el mal uso de la plataforma
 
 ### 3 - Verificación de cuenta por SMS
 Una vez un usuario se registre en el sistema se verificará sus identidad mediante un SMS
-2 
-Fundamental
+<br>2 
+<br>Fundamental<br>
 Nos permite controlar que cada cuenta está asociada a una persona para evitar el uso de bots o la creación de varias cuentas por persona
 
 ### 4 - Inicio de sesión de usuarios
 Para hacer uso del sistema es necesario que cada usuario inicie sesion una vez se hayan registrado
-1,3
-Fundamental
+<br>1,3
+<br>Fundamental<br>
 Es imprescindible para el uso del sistema
 
 ### 5 - Creación de tickets
 Cada usuario podrá notificar una incidencia en forma de ticket añadiendo un titulo, una breve descripción, coordenadas por medio de un GPS y/o imágenes
-1,4 
-Fundamental
+<br>1,4 
+<br>Fundamental<br>
 Es la función principal del sistema
 
 ### 6 - limitación tamaño de tickets
 Se limita cada ticket a un maximo de 50mb en imágenes del formato JPG, PNG y el texto se limita a un máximo de 250 carácteres
-5
-Fundamental
+<br>5
+<br>Fundamental<br>
 Reducir o limitar la carga en la base de datos
 
 ### 7 - Fusión de tickets
 El sistema reconocerá si un ticket coincide en coordenadas con otro ya creado y preguntará al usuario si es el mismo, en el caso de que no lo sea se añadirá al sistema como un nuevo ticket, en caso de serlo se añadirá al ticket principal en forma de un subticket
-5
-Fundamental
+<br>5
+<br>Fundamental<br>
 nos permite añadir mas información sobre una misma incidencia y aumentar el peso prioridad de esta
 
 ### 8 - Editar un ticket
 El usuario tendrá la posibilidad de editar un ticket creado por él
-4
-Deseable
+<br>4
+<br>Deseable<br>
 Permite al usuario corregir errores que haya cometido al crear un ticket o simplemente modificar la información que haya aportado
 
 ### 9 - Términos y condiciones d uso
 En la creación de una cuenta se le notificará al usuario los términos y condiciones de uso de la plataforma así como de toda la información legal
-2 
-Fundamental
+<br>2 
+<br>Fundamental<br>
 Nos permite establecer un uso correcto de la plataforma
 
 ### 10 - Página de inicio
 Al iniciar sesion los usuarios dispondrán de un lista de incidencias cercanas en su página de inicio, mientras que los agentes dispondrán de un mapa en el que se les mostrará las incidencias
-4,12
-Fundamental
+<br>4, 12
+<br>Fundamental<br>
 Es imprescindible para el uso del sistema
 
 ### 11 - Aplicación de escritorio
 Los agentes, a diferencia de los usuarios, dispondrán de una aplicación de escritorio a la que accederám con una cuenta especial de agentes
-1,12
-Fundamental
+<br>1,12
+<br>Fundamental<br>
 Facilita la gestión d elos tickets a los agentes
 
 ### 12 - Cuenta de agentes
 Los agentes prodrán crear un cuenta especial mediante los administradores 
-1 
-Fundamental
+<br>1 
+<br>Fundamental<br>
 Permite al sistema diferenciar entre usuario y agente
 
 ### 13 - Inicio de sesión agentes
 Para hacer uso del sistema los agentes deberán iniciar sesión mediante la aplicación de escritorio
-11, 12
-Fundamental
+<br>11, 12
+<br>Fundamental<br>
 Es imprescindible para que los agentes usen el sistema
 
 ### 14 - Modificar tickets
 Los agentes podrán modificar los tickets, ya sea el estado de este, añadir comentarios o cerrarlos
-13
-Fundamental
+<br>13
+<br>Fundamental<br>
 Permite a los agentes el gestionar los tickets
 
 ### 15 - Protección de datos
 Para cumplir esta ley se usará un certificado SSL
 
-Fundamental
+<br>Fundamental<br>
 Es necesaria para cumplir la ley
 
 ### 16 - Permisos
 A la hora de crear una incidencia el sistema pedirá al usuario permisos para usar tanto el GPS, como la cámara, como el almacenamiento de archivos del dispositivo
-5
-Fundamental
+<br>5
+<br>Fundamental<br>
 Es imprescindible para el uso del sistema
 
 ### 17 - Base de datos noSQL
 Se usará una base de datos noSQL ya que es la mejor opción para nuestro sistema
 
-Fundamental
+<br>Fundamental<br>
 Es imprescindible para el sistema
 
 
