@@ -70,25 +70,18 @@ En este documento veremos una descripción general del producto software, así c
 
 ### 2.1 Perspectiva del producto
 Algunas ciudades, como Málaga, poseen un sistema por el que los ciudadanos pueden poner reclamaciones o peticiones al ayuntamiento. Nos basamos en esta idea para generar un producto que realizase la misma función, enfocado en el matenimiento de la ciudad, de manera más rápida, sencilla y directa.
+
 ### 2.2 Funciones del producto
 Nuestro producto consiste en un aplataforma web en la que los ciudadanos prodrán notificar al ayuntamiento de los distintos desperfectos que encuentren para que este lo solucione. Cada ciudadano deberá registrarse en el sistema creando una cuenta de usuario, una vez registrado podrá crear un ticket para nitificar de un desperfecto. Si las coordenadas de un ticket coinciden con las de otro ya creado el usuario podrá podrá decidir si son la misma y en tal caso también si subirla, en caso de subirla esta se añadira como un subticket del ticket principal o primero. Estos tickets seran tratados por los "agentes", que serian trabajadores del ayuntamiento, pudiendo comentarlos, modificar su estado y cerrarlos.
-[!Casos](Diagrama casos de uso.PNG)
-### 2.3 Restricciones del producto
-Esta subsección debe proporcionar una descripción general de cualquier otro elemento que limitará las opciones del desarrollador. Estos pueden incluir:
 
-* Interfaces para usuarios, otras aplicaciones a usar o limitaciones hardware.
-* Restricciones de calidad de servicio.
-* Cumplimiento de normas.
-* Restricciones en torno al diseño o implementación.
+### 2.3 Restricciones del producto
+Nuestra falta de experiencia nos impide desarrollar el producto como un aplicación móvil, lo que la haría muchos mas fácil y rápida de usar.
 
 ### 2.4 Perfiles de usuario
-Identifique los diversos perfiles de usuarios que usarán este producto. Los perfiles de usuario pueden diferenciarse según la frecuencia de uso, el subconjunto de funciones del producto utilizadas, la experiencia técnica, los niveles de seguridad o privilegio, el nivel educativo o la experiencia. Describa las características pertinentes de cada perfil de usuario. Ciertos requisitos pueden concernir solo a ciertos perfiles usuarios. Priorize los perfiles de usuarios de este producto para concer los requisitos que son más necesarios satisfacer.
-
-Un actor en un caso de uso pertenecerá al menos a un perfil de usuario (podría englobar más). 
+Los usuarios a los que está enfocado nuestro producto serían todos aquellos ciudadanos que esten dispuestos a ayudar de cierta manera a que su ciudad se mantenga en buen estado. 
 
 ### 2.5 Suposiciones y dependencias
-Enumere todos los factores asumidos que podrían afectar los requisitos establecidos en el SRS. Estos podrían incluir componentes comerciales o de terceros que planea utilizar, problemas relacionados con el entorno operativo o de desarrollo, o restricciones. El proyecto podría verse afectado si estos supuestos son incorrectos, no se comparten o cambian. Identifique también cualquier dependencia que el proyecto tenga de factores externos, como los componentes de software que pretende reutilizar de otro proyecto, a menos que ya estén documentados en otro lugar (por ejemplo, en el plan del proyecto).
-
+Un factor que podría afectar a los requisitos establecidos serían los componentes software que usaríamos para desarrollar el producto. El caso más significativo sería el uso de Firebase de Google.
 ### 3 Interfaces externas
 Esta subsección define todos las interfazes de entrada y salida del sistema de software. Esta sección facilita la comprensión de los requisitos. Cada interfaz definida puede incluir el siguiente contenido:
 * Nombre del artículo
@@ -115,32 +108,138 @@ Describa las conexiones entre este producto y otros componentes de software espe
 
 
 ## 4. Requisitos
-Esta sección especifica los requisitos del producto a nivel de sistema y desglosa estos en diferentes categorías. El conjunto de requisitos se debe validar y estos deben ser:
-* Vigentes: Los requisitos reflejan las necesidades actuales de los usuarios del sistema, estos han podido cambiar con el tiempo, por tanto se debe revisar que sigen estando vigentes.
-* Consistentes: Los requisitos no deben tener conflicto entre ellos. De tenerlo se puede establecer prioridades (obligatorio, deseable o opcional sería una opción).
-* Completos: El conjunto de los requisitos define todas las funciones y restricciones deseadas por los stakeholders.
-* Viables: Los requisitos pueden ser implementados dentro del presupuesto y tiempo planeado.
-* Verificables: Los requisitos pueden ser comprobables (verificables) mediante tests.
-
-Para cada requisito se debería especificar, su ID, nombre del requisito, descripción del requisito, dependencias, prioridad y justificación de su espeficación (stakeholder, derivado de un caso de uso, una interfaz necesaria, etc). Un estilo formateado facilitará la lectura. Podéis usar el siguiente formato(dependiendo de la sección se añadiran más o menos almohadillas para ponerlo en su subsección correspondiente):
-
+A continucación se especificarán cada uno de los requisitos del producto a nivel del sistema siguiendo el siguiente formato
 ### ID - Nombre del requisito
 Descripción
 #### Dependencias 
 #### Priodidad
 #### Justificación
 
+### 1 - Conexión a internet
+Al tratarse de una plataforma web es necesario el tener una conexión a internet estable, así como un navegador que soporte HTML5
+Ninguna
+Fundamental
+Es imprescindicle para el uso de sistema
+
+### 2 - Cuenta única de usuario
+Es necesario que cada uno de los usuarios se registre en el sistema aportando un nombre de usuario, un email, un número de telefono y una contraseña para hacer uso de él
+1
+Fundamental
+Para controlar la actividad de los usuarios y evitar el mal uso de la plataforma
+
+### 3 - Verificación de cuenta por SMS
+Una vez un usuario se registre en el sistema se verificará sus identidad mediante un SMS
+2 
+Fundamental
+Nos permite controlar que cada cuenta está asociada a una persona para evitar el uso de bots o la creación de varias cuentas por persona
+
+### 4 - Inicio de sesión de usuarios
+Para hacer uso del sistema es necesario que cada usuario inicie sesion una vez se hayan registrado
+1,3
+Fundamental
+Es imprescindible para el uso del sistema
+
+### 5 - Creación de tickets
+Cada usuario podrá notificar una incidencia en forma de ticket añadiendo un titulo, una breve descripción, coordenadas por medio de un GPS y/o imágenes
+1,4 
+Fundamental
+Es la función principal del sistema
+
+### 6 - limitación tamaño de tickets
+Se limita cada ticket a un maximo de 50mb en imágenes del formato JPG, PNG y el texto se limita a un máximo de 250 carácteres
+5
+Fundamental
+Reducir o limitar la carga en el servidor
+
+### 7 - Fusión de tickets
+El sistema reconocerá si un ticket coincide en coordenadas con otro ya creado y preguntará al usuario si es el mismo, en el caso de que no lo sea se añadirá al sistema como un nuevo ticket, en caso de serlo se añadirá al ticket principal en forma de un subticket
+5
+Fundamental
+nos permite añadir mas información sobre una misma incidencia y aumentar el peso prioridad de esta
+
+### 8 - Editar un ticket
+El usuario tendrá la posibilidad de editar un ticket creado por él
+4
+Deseable
+Permite al usuario corregir errores que haya cometido al crear un ticket o simplemente modificar la información que haya aportado
+
+### 9 - Términos y condiciones d uso
+En la creación de una cuenta se le notificará al usuario los términos y condiciones de uso de la plataforma así como de toda la información legal
+2 
+Fundamental
+Nos permite establecer un uso correcto de la plataforma
+
+### 10 - Página de inicio
+Al iniciar sesion los usuarios dispondrán de un lista de incidencias cercanas en su página de inicio, mientras que los agentes dispondrán de un mapa en el que se les mostrará las incidencias
+4,12
+Fundamental
+Es imprescindible para el uso del sistema
+
+### 11 - Aplicación de escritorio
+Los agentes, a diferencia de los usuarios, dispondrán de una aplicación de escritorio a la que accederám con una cuenta especial de agentes
+1,12
+Fundamental
+Facilita la gestión d elos tickets a los agentes
+
+### 12 - Cuenta de agentes
+Los agentes prodrán crear un cuenta especial mediante los administradores 
+1 
+Fundamental
+Permite al sistema diferenciar entre usuario y agente
+
+### 13 - Inicio de sesión agentes
+Para hacer uso del sistema los agentes deberán iniciar sesión mediante la aplicación de escritorio
+11, 12
+Fundamental
+Es imprescindible para que los agentes usen el sistema
+
+### 14 - Modificar tickets
+Los agentes podrán modificar los tickets, ya sea el estado de este, añadir comentarios o cerrarlos
+13
+Fundamental
+Permite a los agentes el gestionar los tickets
+
+### 15 - Protección de datos
+Para cumplir esta ley se usará un certificado SSL
+
+Fundamental
+Es necesaria para cumplir la ley
+
+### 16 - Permisos
+A la hora de crear una incidencia el sistema pedirá al usuario permisos para usar tanto el GPS, como la cámara, como el almacenamiento de archivos del dispositivo
+5
+Fundamental
+Es imprescindible para el uso del sistema
+
+### 17 - Base de datos noSQL
+Se usará una base de datos noSQL ya que es la mejor opción para nuestro sistema
+
+Fundamental
+Es imprescindible para el sistema
+
+
 ### 4.1 Precedencia y prioridad
-Esta sección está compuesta por una tabla que resumirá todos los requisitos especificados en las secciones siguientes. Se debe detallar un ID único, un nombre de requisito, su descripción, la prioridad de ese requisitos (es algo **Fundamental** a desarrollar; es **Deseable** tenerlo para que el cliente esté satisfecho; o es algo **Opcional** que estaría bien desarrollar si el tiempo lo permite), su precedencia (requisitos que deberán ser implementados antes) y el tipo (funcional o no funcional).
-
-Esta tabla se generará en paralelo a las secciones correspondientes, y se completará cuando todas las secciones estén terminadas. Os recomiendo hacerla en excel e importarla en https://www.tablesgenerator.com/markdown_tables para generar la tabla en formato Markdown. Meter retornos de carro para que no se alarge mucho la tabla y usad la opción *_line break as <br>_* para que esos retornos de carro sean efectivos al copiarlos.
-
 
 | Id 	| Nombre 	| Descripción 	| Priodidad 	| Precedencia 	| Tipo 	|
 |:--:	|:----------------------------:	|:----------------------------------------------------------------------------------------------------------------------------------------------------------------:	|:-------------------:	|:-----------:	|-----------	|
-| R3 	| Datos de clientes 	| El sistema deberá registar los datos de los clientes<br>para su posterior tratamiento. Estos incluirán su <br>nombre, DNI, fecha de nacimiento, género y e-mail. 	| <br>Fundamental<br> 	|  	| Funcional 	|
-| R4 	| Modificar datos <br>clientes 	| El sistema permitirá modificar el e-mail del cliente. 	| Fundamental 	| R3 	| Funcional 	|
-|  	|  	|  	|  	|  	|  	|
+| 1	| Conexión a internet 	| Al tratarse de una plataforma web es necesario el tener una conexión a internet estable, así como un navegador que soporte HTML5 	| Fundamental 	|  	| Funcional 	|
+| 2 | Cuenta única de usuario 	| Es necesario que cada uno de los usuarios se registre en el sistema aportando un nombre de usuario, un email, un número de telefono y una contraseña para hacer uso de él 	| Fundamental 	| 1 	| Funcional 	|
+|  3	| Verificación de cuenta por SMS 	| Una vez un usuario se registre en el sistema se verificará sus identidad mediante un SMS 	| Fundamental 	| 2 	| No funcional 	|
+|  4	| Inicio de sesión de usuarios 	| Para hacer uso del sistema es necesario que cada usuario inicie sesion una vez se hayan registrado 	| Fundamental 	| 1, 3 	| Funcional 	|
+|  5	| Creación de tickets 	| Cada usuario podrá notificar una incidencia en forma de ticket añadiendo un titulo, una breve descripción, coordenadas por medio de un GPS y/o imágenes 	| Fundamental 	| 1, 4 	| Funcional 	|
+|  6	| limitación tamaño de tickets 	| Se limita cada ticket a un maximo de 50mb en imágenes del formato JPG, PNG y el texto se limita a un máximo de 250 carácteres 	| Fundamental 	| 5 	| No funcional 	|
+|  7	| Fusión de tickets 	| El sistema reconocerá si un ticket coincide en coordenadas con otro ya creado y preguntará al usuario si es el mismo, en el caso de que no lo sea se añadirá al sistema como un nuevo ticket, en caso de serlo se añadirá al ticket principal en forma de un subticket 	| Fundamental 	| 5 	| Funcional 	|
+|  8	| Editar un ticket 	| El usuario tendrá la posibilidad de editar un ticket creado por él 	| Deseable 	| 4 	| Funcional 	|
+|  9	| Términos y condiciones d uso 	| En la creación de una cuenta se le notificará al usuario los términos y condiciones de uso de la plataforma así como de toda la información legal 	| 2 	| Fundamental 	| Funcional	|
+|  10	| Página de inicio 	| Al iniciar sesion los usuarios dispondrán de un lista de incidencias cercanas en su página de inicio, mientras que los agentes dispondrán de un mapa en el que se les mostrará las incidencias 	| Fundamental 	| 4, 12 	| No funcional 	|
+|  	11  | Aplicación de escritorio 	| Los agentes, a diferencia de los usuarios, dispondrán de una aplicación de escritorio a la que accederám con una cuenta especial de agentes 	| Fundamental 	| 1, 12 	| Funcional   |
+|  12	| Cuenta de agentes 	| Los agentes prodrán crear un cuenta especial mediante los administradores 	| Fundamental 	| 1 	|  Funcional	|
+|  13	| Inicio de sesión agentes 	| Para hacer uso del sistema los agentes deberán iniciar sesión mediante la aplicación de escritorio 	| Fundamental 	| 11, 12 	| Funcional 	|
+|  14	| Modificar tickets 	| Los agentes podrán modificar los tickets, ya sea el estado de este, añadir comentarios o cerrarlos 	| Fundamental 	| 13 	| Funcional 	|
+|  15	| Protección de datos 	| Para cumplir esta ley se usará un certificado SSL 	| Fundamental 	|  	| Funcional 	|
+|  16	| Permisos 	| A la hora de crear una incidencia el sistema pedirá al usuario permisos para usar tanto el GPS, como la cámara, como el almacenamiento de archivos del dispositivo 	| Fundamental 	| 5 	| Funcional 	|
+|  17	|  Base de datos noSQL	| Se usará una base de datos noSQL ya que es la mejor opción para nuestro sistema 	| Fundamental 	|  	| No funcional 	|
+
 	
 
 
