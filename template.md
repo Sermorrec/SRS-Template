@@ -218,7 +218,7 @@ Es imprescindible para el sistema
 
 
 ### 4.2 Funcionales
-(/relative/path/to/Casos de uso.pdf?raw=true "Optional Title")
+[Documento casos de uso](https://github.com/Sermorrec/SRS-Template/blob/master/Casos%20de%20uso.pdf)
 
 ### 4.3 Diseño e implementación
 
