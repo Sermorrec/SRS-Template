@@ -63,7 +63,7 @@ Algunas ciudades, como Málaga, poseen un sistema por el que los ciudadanos pued
 
 ### 2.2 Funciones del producto
 Nuestro producto consiste en un aplataforma web en la que los ciudadanos prodrán notificar al ayuntamiento de los distintos desperfectos que encuentren para que este lo solucione. Cada ciudadano deberá registrarse en el sistema creando una cuenta de usuario, una vez registrado podrá crear un ticket para nitificar de un desperfecto. Si las coordenadas de un ticket coinciden con las de otro ya creado el usuario podrá podrá decidir si son la misma y en tal caso también si subirla, en caso de subirla esta se añadira como un subticket del ticket principal o primero. Estos tickets seran tratados por los "agentes", que serian trabajadores del ayuntamiento, pudiendo comentarlos, modificar su estado y cerrarlos.
-(Diagrama casos de uso.PNG)
+(Diagrama casos de uso.png)
 
 ### 2.3 Restricciones del producto
 Nuestra falta de experiencia nos impide desarrollar el producto como un aplicación móvil, lo que la haría muchos mas fácil y rápida de usar.
