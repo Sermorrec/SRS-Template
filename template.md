@@ -57,7 +57,7 @@ Nuestro software consiste en una plataforma en la que unos usuarios puedan subir
 En este documento veremos una descripción general del producto software, así como los requisitos del producto, sus interfaces y los metodos de verificación que se usarán en este.
 
 ## 2. Vista general del producto
-![](SRS-Template/Diagrama casos de uso.PNG)
+![](/Diagrama casos de uso.PNG)
 ### 2.1 Perspectiva del producto
 Algunas ciudades, como Málaga, poseen un sistema por el que los ciudadanos pueden poner reclamaciones o peticiones al ayuntamiento. Nos basamos en esta idea para generar un producto que realizase la misma función, enfocado en el matenimiento de la ciudad, de manera más rápida, sencilla y directa.
 
