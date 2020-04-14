@@ -28,20 +28,10 @@ Clean-up
 * 4 [Requisitos](#4-requisitos)
   * 4.1 [Precedencia y prioridad](#41-precedencia-y-prioridad) 
   * 4.2 [Funcionales](#42-funcionales)
-  * 4.3 [Calidad de Servicio](#43-calidad-de-servicio)
-    * 4.3.1 [Rendimiento](#431-rendimiento)
-    * 4.3.2 [Seguridad](#432-seguridad)
-    * 4.3.3 [Fiabilidad](#433-fiabilidad)
-    * 4.3.4 [Disponibilidad](#434-disponibilidad)
-  * 4.4 [Normativas aplicables](#44-normativas-aplicables)
-  * 4.5 [Diseño e implementación](#45-diseño-e-implementación)
-    * 4.5.1 [Instalación](#451-instalación)
-    * 4.5.2 [Distribución](#452-distribución)
-    * 4.5.3 [Mantenimiento](#453-mantenimiento)
-    * 4.5.4 [Reusabilidad](#454-reusabilidad)
-    * 4.5.5 [Portabilidad](#455-portabilidad)
-    * 4.5.6 [Coste](#456-coste)
-    * 4.5.7 [Fecha de Entrega](#457-fecha-de-entrega)
+  * 4.3 [Diseño e implementación](#43-diseño-e-implementación)
+    * 4.3.1 [Instalación](#431-instalación)
+    * 4.3.2 [Reusabilidad](#432-reusabilidad)
+    * 4.3.3 [Fecha de Entrega](#433-fecha-de-entrega)
 * 5 [Verificación](#5-verificación)
 * 6 [Apendices](#6-apendices) 
   
@@ -73,6 +63,7 @@ Algunas ciudades, como Málaga, poseen un sistema por el que los ciudadanos pued
 
 ### 2.2 Funciones del producto
 Nuestro producto consiste en un aplataforma web en la que los ciudadanos prodrán notificar al ayuntamiento de los distintos desperfectos que encuentren para que este lo solucione. Cada ciudadano deberá registrarse en el sistema creando una cuenta de usuario, una vez registrado podrá crear un ticket para nitificar de un desperfecto. Si las coordenadas de un ticket coinciden con las de otro ya creado el usuario podrá podrá decidir si son la misma y en tal caso también si subirla, en caso de subirla esta se añadira como un subticket del ticket principal o primero. Estos tickets seran tratados por los "agentes", que serian trabajadores del ayuntamiento, pudiendo comentarlos, modificar su estado y cerrarlos.
+![](/relative/path/to/Diagrama casos de uso.png?raw=true "Optional Title")
 
 ### 2.3 Restricciones del producto
 Nuestra falta de experiencia nos impide desarrollar el producto como un aplicación móvil, lo que la haría muchos mas fácil y rápida de usar.
@@ -83,28 +74,12 @@ Los usuarios a los que está enfocado nuestro producto serían todos aquellos ci
 ### 2.5 Suposiciones y dependencias
 Un factor que podría afectar a los requisitos establecidos serían los componentes software que usaríamos para desarrollar el producto. El caso más significativo sería el uso de Firebase de Google.
 ### 3 Interfaces externas
-Esta subsección define todos las interfazes de entrada y salida del sistema de software. Esta sección facilita la comprensión de los requisitos. Cada interfaz definida puede incluir el siguiente contenido:
-* Nombre del artículo
-* Fuente de entrada o destino de salida
-* Rango válido, precisión y / o tolerancia
-* Unidades de medida
-* Sincronización
-* Relaciones con otras entradas / salidas
-* Formatos de pantalla / organización
-* Formatos de ventana / organización
-* Formatos de datos
-* Formatos de comando
-* Fin de mensajes
 
 #### 3.1 Interfaces con el usuario 
 
-Defina los componentes de software para los que se necesita una interfaz de usuario. Describa las características de cada interfaz entre el producto de software y los usuarios. Esto puede incluir imágenes de pantalla de muestra, cualquier estándar de GUI o guías de estilo de familia de productos que se deben seguir, restricciones de diseño de pantalla, botones y funciones estándar (por ejemplo, ayuda) que aparecerán en cada pantalla, métodos abreviados de teclado, estándares de visualización de mensajes de error y pronto. 
-
 #### 3.2 Interfaces con el Hardware
-Describa las características de cada interfaz entre el producto de software y los componentes de hardware del sistema. Esto puede incluir los tipos de dispositivos que deben ser compatibles, la naturaleza de los datos y las interacciones de control entre el software y el hardware, y los protocolos de comunicación que se utilizarán.
 
 #### 3.3 Interfaces con el Software
-Describa las conexiones entre este producto y otros componentes de software específicos (nombre y versión), incluidas bases de datos, sistemas operativos, herramientas, bibliotecas y componentes comerciales integrados. Identifique los elementos de datos o mensajes que entran y salen del sistema y describa el propósito de cada uno. Describa los servicios necesarios y la naturaleza de las comunicaciones. Consulte los documentos que describen los protocolos detallados de la interfaz de programación de aplicaciones. Identifique los datos que se compartirán entre los componentes de software. Si el mecanismo de intercambio de datos debe implementarse de una manera específica (por ejemplo, memoria compartida, ficheros, en la nube, etc), especifique esto como una restricción de implementación.
 
 
 ## 4. Requisitos
@@ -149,7 +124,7 @@ Es la función principal del sistema
 Se limita cada ticket a un maximo de 50mb en imágenes del formato JPG, PNG y el texto se limita a un máximo de 250 carácteres
 5
 Fundamental
-Reducir o limitar la carga en el servidor
+Reducir o limitar la carga en la base de datos
 
 ### 7 - Fusión de tickets
 El sistema reconocerá si un ticket coincide en coordenadas con otro ya creado y preguntará al usuario si es el mismo, en el caso de que no lo sea se añadirá al sistema como un nuevo ticket, en caso de serlo se añadirá al ticket principal en forma de un subticket
@@ -230,7 +205,7 @@ Es imprescindible para el sistema
 |  6	| limitación tamaño de tickets 	| Se limita cada ticket a un maximo de 50mb en imágenes del formato JPG, PNG y el texto se limita a un máximo de 250 carácteres 	| Fundamental 	| 5 	| No funcional 	|
 |  7	| Fusión de tickets 	| El sistema reconocerá si un ticket coincide en coordenadas con otro ya creado y preguntará al usuario si es el mismo, en el caso de que no lo sea se añadirá al sistema como un nuevo ticket, en caso de serlo se añadirá al ticket principal en forma de un subticket 	| Fundamental 	| 5 	| Funcional 	|
 |  8	| Editar un ticket 	| El usuario tendrá la posibilidad de editar un ticket creado por él 	| Deseable 	| 4 	| Funcional 	|
-|  9	| Términos y condiciones d uso 	| En la creación de una cuenta se le notificará al usuario los términos y condiciones de uso de la plataforma así como de toda la información legal 	| 2 	| Fundamental 	| Funcional	|
+|  9	| Términos y condiciones d uso 	| En la creación de una cuenta se le notificará al usuario los términos y condiciones de uso de la plataforma así como de toda la información legal 	| Fundamental 	| 2 	| Funcional	|
 |  10	| Página de inicio 	| Al iniciar sesion los usuarios dispondrán de un lista de incidencias cercanas en su página de inicio, mientras que los agentes dispondrán de un mapa en el que se les mostrará las incidencias 	| Fundamental 	| 4, 12 	| No funcional 	|
 |  	11  | Aplicación de escritorio 	| Los agentes, a diferencia de los usuarios, dispondrán de una aplicación de escritorio a la que accederám con una cuenta especial de agentes 	| Fundamental 	| 1, 12 	| Funcional   |
 |  12	| Cuenta de agentes 	| Los agentes prodrán crear un cuenta especial mediante los administradores 	| Fundamental 	| 1 	|  Funcional	|
@@ -244,62 +219,21 @@ Es imprescindible para el sistema
 
 
 ### 4.2 Funcionales
-Esta sección especifica los requisitos funcionales de sistema que el futuro software debe tener en su entorno. Se aconseja poner un enlace al documento de casos de uso generado por magic draw para que el lector tenga una vista general de las funcionalidades del producto a generar.
+![](/relative/path/to/Casos de uso.pdf?raw=true "Optional Title")
 
+### 4.3 Diseño e implementación
 
+#### 4.3.1 Instalación
+Los usuarios deberan usar un navegador web complatible con HTML5 y los agentes deberán usar un sistema operativo W10 para poder instalar el cliente
 
-### 4.3 Calidad de Servicio
-Esta sección establece requisitos no funcionales relacionados con la calidad que deben presentar las funcionales del software.
- 
-#### 4.3.1 Rendimiento
-Si existen requisitos no funcionales de rendimiento para el producto en varias circunstancias, indíquelos aquí y explique sus razones, para ayudar a los desarrolladores a comprender la intención y tomar las decisiones de diseño adecuadas. Especifique las restricciones de tiempo. Haga tales requisitos tan específicos como sea posible. Es posible que deba indicar los requisitos de rendimiento para requisitos funcionales o características individuales.
+#### 4.3.2 Reusabilidad
+Usariamos Firebase de Google
 
-#### 4.3.2 Seguridad
-Especifique los requisitos no funcionales relacionados con los problemas de seguridad o privacidad relacionados con el uso del producto. 
-* Protección de los datos utilizados o creados por el producto.
-* Requisitos de autenticación de identidad de usuario. 
-* Políticas o regulaciones externas que contengan problemas de seguridad que afecten al producto. 
-* Certificaciones de seguridad o privacidad que deben cumplirse.
-
-#### 4.3.3 Fiabilidad
-Especifique los requisitos no funcionales necesarios para establecer la fiabilidad requerida del sistema de software al momento de la entrega.
-
-#### 4.3.4 Disponibilidad
-Especifique los requisitos no funcionales necesarios para garantizar un nivel de disponibilidad definido para todo el sistema, tiempo mínimo disponible por día, máximos de reinicios permitidos por tiempo, etc.
-
-### 4.4 Normativas aplicables
-Especifique los requisitos no funcionales derivados de las normas o regulaciones existentes, que incluyen:
-* Formato de informe
-* Nombre de datos
-* Procedimientos contables
-* Seguimiento de auditoría
-
-### 4.5 Diseño e implementación
-
-#### 4.5.1 Instalación
-Restricciones para garantizar que el futuro software se ejecutará sin problemas en la plataforma de implementación de destino.
-
-#### 4.5.2 Distribución
-Restricciones en los componentes de software para adaptarse a la estructura distribuida geográficamente de la organización en la que se va a instalar el software, la distribución de datos a procesar o la distribución de dispositivos a controlar.
-
-#### 4.5.3 Mantenimiento
-Especifique los atributos del software que se relacionan con la facilidad de mantenimiento del software en sí. Estos pueden incluir requisitos para cierta modularidad, interfaces o limitación de complejidad. Los requisitos no se deben colocar aquí solo porque son buenas prácticas de diseño.
-
-#### 4.5.4 Reusabilidad
-Software externo que deberá usarse.
-
-#### 4.5.5 Portabilidad
-Especifique los atributos del software que se relacionan con la facilidad de portar el software a otras máquinas host y / o sistemas operativos.
-
-#### 4.5.6 Coste
-Especifique las limitaciones en el costo del producto de software.
-
-#### 4.5.7 Fecha de entrega
-Especifique, si tiene, fecha de entrega del producto.
+#### 4.3.3 Fecha de entrega
+5 de Junio de 2020
 
 ## 5. Verificación
-Esta sección proporciona los enfoques y métodos de verificación planeados para calificar el software. Se recomienda que los elementos de información para verificación se proporcionen de manera paralela con los elementos de requisitos en la Sección 4. El propósito del proceso de verificación es proporcionar evidencia objetiva de que un sistema o elemento del sistema cumple con los requisitos y características especificados.
-
+Para verificar la aplicaion de escritorio se usará JUNIT y para el resto de requisitos se probará usando el sistema. 
 
 ## 6. Apendices
 ### Apéndice A: Ejemplos de este documento relleno
